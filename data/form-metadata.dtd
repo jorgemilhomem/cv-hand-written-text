@@ -1,0 +1,135 @@
+ <!--
+        This is the DTD for "IAM Handwriting Database" metadata.
+        The system-id is 'http://www.iam.unibe.ch/~fki/iamDB/form-metadata.dtd', there
+        is no public-id yet. The java classes map the system-id to the java resource
+        ch/unibe/iam/handwirtingDB/form-metadata.dtd in the handwirtingDB jar-file.
+        -->
+        <!--
+        Formular
+                created:                creation date, format yyyy-mm-dd
+                height:                 height of image data, in pixel
+                id:                     identification number of form, format /[a-z]\d\d\d-\d\d\d\w?/
+                last-modified:          modification date, format yyyy-mm-dd
+                skew:                   form skew, in 1000th degree
+                status:                 form status, is "final"
+                version:                version, is "3.0"
+                width:                  width of image data, in pixel
+                wid:                    writer identification, a number
+        -->
+        <!ELEMENT form (machine-printed-part, handwritten-part)>
+        <!ATTLIST form
+                created                 CDATA #REQUIRED
+                height                  CDATA #REQUIRED
+                id                      ID      #REQUIRED
+                last-modified           CDATA #REQUIRED
+                skew                    CDATA #REQUIRED
+                status                  (final|verified|segmented|raw) #FIXED "final"
+                version                 (3.0_beta|3.0) #REQUIRED
+                width                   CDATA #REQUIRED
+                writer-id               CDATA #REQUIRED
+                select                  CDATA #IMPLIED
+        >
+        <!--
+        Machine Printed Part
+                text:                   content of line, a string
+        -->
+        <!ELEMENT machine-printed-part (machine-print-line)+>
+        <!ELEMENT machine-print-line EMPTY>
+        <!ATTLIST machine-print-line
+                text                    CDATA #REQUIRED
+        >
+        <!--
+        Hand Written Part
+        -->
+        <!ELEMENT handwritten-part (line)+>
+        <!--
+        Line
+                ass:                    ascender slope, 1000th degree
+                asx:                    ascender x value, is "0"
+                asy:                    ascender y value
+                character-width:        average character width (unused), is "999"
+                dss:                    descender slope, 1000th degree
+                dsx:                    descender x value, is "0"
+                dsy:                    descender y value
+                fd0:                    fractal dimension 0 (see master of Caroline Hertel)
+                fd1:                    fractal dimension 1
+                fd2:                    fractal dimension 2
+                filter-width:           filter width (meaning unknown ???)
+                id:                     identifier, format is: indentfier of enclosing
+                                                form "-" line number (starting with 0)
+                lss:                    lower baseline slope, 1000th degree
+                lsx:                    lower baseline x value, is "0"
+                lsy:                    lower baseline y value
+                segmentation:           result of word segmentation, is "err" or "ok"
+                slant:                  slant, 1000th degree
+                stroke-width:           average stroke width, in pixel
+                threshold:              threshold of binarization
+                text:                   content of line, a string
+                uss:                    upper baseline slope, 1000th degree
+                usx:                    upper baseline x value, is "0"
+                usy:                    upper baseline y value
+        -->
+        <!ELEMENT line ((word)+, (upper-contour)?, (lower-contour)?)>
+        <!ATTLIST line
+                ass                     CDATA #REQUIRED
+                asx                     CDATA #FIXED "0"
+                asy                     CDATA #REQUIRED
+                character-width         CDATA #FIXED "999"
+                dss                     CDATA #REQUIRED
+                dsx                     CDATA #FIXED "0"
+                dsy                     CDATA #REQUIRED
+                fd0                     CDATA #IMPLIED
+                fd1                     CDATA #IMPLIED
+                fd2                     CDATA #IMPLIED
+                filter-width            CDATA #REQUIRED
+                id                      ID    #REQUIRED
+                lbs                     CDATA #REQUIRED
+                lbx                     CDATA #FIXED "0"
+                lby                     CDATA #REQUIRED
+                segmentation            (ok|err) #REQUIRED
+                slant                   CDATA #REQUIRED
+                stroke-width            CDATA #REQUIRED
+                threshold               CDATA #REQUIRED
+                text                    CDATA #REQUIRED
+                ubs                     CDATA #REQUIRED
+                ubx                     CDATA #FIXED "0"
+                uby                     CDATA #REQUIRED
+        >
+        <!-- Word
+                id:                     identifier, format is: indentfier of enclosing
+                                                line "-" word number (starting with 0)
+                sentence-start:         initial-sentence-marker, is "yes" or "no"
+                tag:                    type of word, as defined by ??? standard
+                text:                   value of word, a string
+        -->
+        <!ELEMENT word (cmp)*>
+        <!ATTLIST word
+                id                      ID #REQUIRED
+                sentence-start          (yes|no) "no"
+                tag                     CDATA #REQUIRED
+                text                    CDATA #REQUIRED
+        >
+        <!-- Component
+                x:                      x position
+                y:                      y position
+                width:                  width, in pixel
+                height:                 height, in pixel
+        -->
+        <!ELEMENT cmp EMPTY>
+        <!ATTLIST cmp
+                x                       CDATA #REQUIRED
+                y                       CDATA #REQUIRED
+                width                   CDATA #REQUIRED
+                height                  CDATA #REQUIRED
+        >
+        <!-- Contour Data
+                x:                      x position
+                y:                      y position
+        -->
+        <!ELEMENT upper-contour (point)+>
+        <!ELEMENT lower-contour (point)+>
+        <!ELEMENT point EMPTY>
+        <!ATTLIST point
+                x                       CDATA #REQUIRED
+                y                       CDATA #REQUIRED
+        >
