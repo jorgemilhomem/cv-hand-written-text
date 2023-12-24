@@ -1,4 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 *tgz filter=lfs diff=lfs merge=lfs -text
+data/words_df.csv filter=lfs diff=lfs merge=lfs -text
+data/words_df.pkl filter=lfs diff=lfs merge=lfs -text
 * !text !filter !merge !diff
