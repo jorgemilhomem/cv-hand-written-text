@@ -1,9 +1,10 @@
-# Ignore specific large file types
+# Ignore specific file types
 *.pkl
 *.tgz
 *.csv
 *.png
 *.xml
+*.DS_Store
 
 # Ignore specific directories
 data/*
