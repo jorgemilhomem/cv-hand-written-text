@@ -6,6 +6,9 @@
 *.xml
 *.DS_Store
 
+# Ignore specific files
+feedback_prof.txt
+
 # Ignore specific directories
 data/*
 
