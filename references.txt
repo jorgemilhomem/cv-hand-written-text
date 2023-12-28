@@ -1,0 +1,18 @@
+database: https://fki.tic.heia-fr.ch/databases/download-the-iam-handwriting-database
+
+cool articles:
+https://nanonets.com/blog/handwritten-character-recognition/
+https://towardsdatascience.com/build-a-handwritten-text-recognition-system-using-tensorflow-2326a3487cd5?gi=f2fe6f026cda&skipOnboarding=1&source=login--------------------------post_regwall-----------
+https://towardsdatascience.com/understanding-input-and-output-shapes-in-convolution-network-keras-f143923d56ca (explains the shapes in cnns)
+https://towardsdatascience.com/an-approach-towards-convolutional-recurrent-neural-networks-a2e6ce722b19 (explain a specific convolutional recurrent neural network)
+
+cool papers:
+https://arxiv.org/pdf/2207.04651.pdf (presents the state-of-the-art algorithms for hand-written text recognition in a concise way)
+
+cool github repositories:
+https://github.com/arthurflor23/handwritten-text-recognition (text lines recognition, contains tutorial, cited articles)
+https://github.com/pankajsingh016/HandWritten-English-Alphabet-Character-Recognition (character recognition)
+
+cool videos:
+https://youtu.be/bte8Er0QhDg (simple python intro to character recognition, says CNNs, even NNs can be overkill for character recognition)
+https://youtu.be/u3FLVbNn9Os (character recognition using CNNs python)
