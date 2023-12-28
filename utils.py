@@ -1,3 +1,13 @@
+import matplotlib.pyplot as plt
+import os
+import requests
+import tarfile
+import cv2
+import numpy as np
+
+
+
+
 def display_image(image):
     """
     Displays a given image.
@@ -10,7 +20,7 @@ def display_image(image):
     plt.tight_layout(pad=0)
     plt.show()
 
-    def download_file(url, local_filename):
+def download_file(url, local_filename):
     if os.path.exists(local_filename):
         print(f"File {local_filename} already exists. Skipped download.")
         return local_filename
