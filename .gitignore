@@ -10,6 +10,7 @@ feedback_prof.txt
 
 # Ignore specific directories
 data/*
+my_dir_hyper_CRNN/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
