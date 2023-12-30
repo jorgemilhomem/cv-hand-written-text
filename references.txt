@@ -16,3 +16,8 @@ https://github.com/pankajsingh016/HandWritten-English-Alphabet-Character-Recogni
 cool videos:
 https://youtu.be/bte8Er0QhDg (simple python intro to character recognition, says CNNs, even NNs can be overkill for character recognition)
 https://youtu.be/u3FLVbNn9Os (character recognition using CNNs python)
+
+
+[2] - https://www.ibm.com/topics/neural-networks 
+
+[3] - https://news.mit.edu/2017/explained-neural-networks-deep-learning-0414 
