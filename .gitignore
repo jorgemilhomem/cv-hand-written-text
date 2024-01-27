@@ -171,3 +171,12 @@ cython_debug/
 #.idea/
 .DS_Store
 .DS_Store
+*.json
+best_models/my_dir_hyper_CRNN/seq_to_seq_model_CRNN/trial_01/checkpoint
+*.data-00000-of-00001
+*.index
+best_models/my_dir_hyper_CRNN/seq_to_seq_model_CRNN/trial_04/checkpoint
+*.json
+*.json
+*.json
+*.json
