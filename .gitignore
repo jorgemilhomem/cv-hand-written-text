@@ -4,6 +4,8 @@
 *.csv
 *.xml
 *.DS_Store
+*.txt
+*.h5
 
 # Ignore specific files
 feedback_prof.txt
